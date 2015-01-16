@@ -10,4 +10,8 @@ class Phone
     @@phone_numbers
   end
 
+  define_method(:save) do
+    @@phone_numbers.push(self)
+  end
+
 end

@@ -16,4 +16,12 @@ describe(Phone) do
     end
   end
 
+  describe('#save') do
+    it('saves the phone number to the array of saved phone numbers') do
+      test_number = Phone.new({:phone_number => "411"})
+      test_number.save()
+      expect(Phone.all()).to(eq([test_number]))
+    end
+  end
+
 end
