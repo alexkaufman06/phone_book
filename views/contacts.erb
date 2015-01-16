@@ -1,0 +1,21 @@
+<h1><%= @contacts.contact_name() %></h1>
+
+<form action="/phone_numbers" method="post">
+  <input id='contact_id' name='contact_id' type='hidden' value='<%= @contacts.id() %>'>
+  <label for='phone_number'>Phone number:</label>
+  <input id='phone_number' name='phone_number' type='text' required>
+  <br>
+  <button type='submit' class='btn btn-success'>Add Phone Number</button>
+<form>
+  <br><br>
+
+<% if @contacts.contacts_numbers() == [] %>
+  <p>There are currently no numbers stored.</p>
+<% else @contacts.contacts_numbers().each() do |number| %>
+  <ul>
+    <li><%= number %></a></li>
+  </ul>
+  <% end %>
+<% end %>
+
+<a href='/'>Back to contacts list</a>

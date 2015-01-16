@@ -1,0 +1,19 @@
+<h1>Phone Book</h1>
+
+<h3>Add a contact here:</h3>
+
+<form action="/contacts" method="post">
+  <label for="contact">Contact's name:</label>
+  <input id="contact" name="contact" type="text" required>
+  <br>
+  <button type="submit" class="btn btn-success">Add Contact</button>
+<form>
+<br><br>
+<% if @contacts == [] %>
+  <p>There are currently no contacts stored.</p>
+<% else @contacts.each() do |contact| %>
+  <ul>
+    <li><a href="/contacts/<%= contact.id() %>"><%= contact.contact_name() %></a></li>
+  </ul>
+  <% end %>
+<% end %>
