@@ -9,5 +9,11 @@ describe(Phone) do
       expect(test_number.phone_number()).to(eq("911"))
     end
   end
-  
+
+  describe('.all') do
+    it('is empty at first') do
+      expect(Phone.all()).to(eq([]))
+    end
+  end
+
 end
