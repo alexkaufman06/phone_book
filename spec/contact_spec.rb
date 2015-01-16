@@ -32,6 +32,12 @@ describe(Contact) do
     end
   end
 
-
+  describe('.clear') do
+    it('empties out all of the saved contacts') do
+      Contact.new({:contact_name => "Ivana Humpalot"})
+      Contact.clear()
+      expect(Contact.all()).to(eq([]))
+    end
+  end
 
 end
