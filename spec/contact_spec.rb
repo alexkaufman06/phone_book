@@ -11,4 +11,11 @@ describe(Contact) do
     end
   end
 
+  describe('#id') do
+    it('returns the id of the contact') do
+      test_contact = Contact.new({:contact_name => "Wendy Wacko"})
+      expect(test_contact.id()).to(eq(1))
+    end
+  end
+
 end
