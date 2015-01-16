@@ -51,5 +51,4 @@ describe(Phone) do
       expect(Phone.find(test_number.id())).to(eq(test_number))
     end
   end
-
 end

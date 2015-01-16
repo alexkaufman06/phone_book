@@ -5,17 +5,19 @@
   <label for='phone_number'>Phone number:</label>
   <input id='phone_number' name='phone_number' type='text' required>
   <br>
+  <label for='phone_number_type'>Phone type:</label>
+  <input id='phone_number_type' name='phone_number_type' type='text'>
+  <br>
   <button type='submit' class='btn btn-success'>Add Phone Number</button>
 <form>
   <br><br>
-
+<a href='/'>Back to contacts list</a>
+  <br><br>
 <% if @contacts.contacts_numbers() == [] %>
   <p>There are currently no numbers stored.</p>
-<% else @contacts.contacts_numbers().each() do |number| %>
+<% else @contacts.contacts_numbers().each() do |phone_object| %>
   <ul>
-    <li><%= number %></a></li>
+    <li><%= phone_object.phone_number_type() %> <%= phone_object.phone_number() %></a></li>
   </ul>
   <% end %>
 <% end %>
-
-<a href='/'>Back to contacts list</a>
