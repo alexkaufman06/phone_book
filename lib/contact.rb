@@ -20,4 +20,12 @@ class Contact
     @@contacts = []
   end
 
+  define_singleton_method(:find) do |identification|
+    @@contacts.each() do |contact|
+      if contact.id().eql?(identification)
+        return contact
+      end
+    end
+  end
+
 end
