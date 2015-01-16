@@ -1,5 +1,5 @@
 class Contact
-  attr_reader(:contact_name, :id)
+  attr_reader(:contact_name, :id, :contacts_numbers)
   @@contacts = []
 
   define_method(:initialize) do |attributes|
@@ -28,4 +28,7 @@ class Contact
     end
   end
 
+  define_method(:add_number) do |number|
+    @contacts_numbers.push(number)
+  end
 end
