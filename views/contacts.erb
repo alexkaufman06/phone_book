@@ -17,7 +17,7 @@
   <p>There are currently no numbers stored.</p>
 <% else @contacts.contacts_numbers().each() do |phone_object| %>
   <ul>
-    <li><%= phone_object.phone_number_type() %> <%= phone_object.phone_number() %></a></li>
+    <li><%= phone_object.phone_number_type() %> <%= phone_object.phone_number() %></li>
   </ul>
   <% end %>
 <% end %>
